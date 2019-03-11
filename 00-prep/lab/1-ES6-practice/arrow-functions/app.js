@@ -108,37 +108,55 @@ const newObject = array => ({
 
 
 
-let sum = function(a, b, c, d) {
-  return a + b + c + d;
-};
+// let sum = function(a, b, c, d) {
+//   return a + b + c + d;
+// };
+
+const sum = (num1, num2, num3, num4) => `${num1} + ${num2} + ${num3} + ${num4} = ${num1 + num2 + num3 + num4}`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(sum(1, 2, 3, 4));
 
 
-let objectLit = function() {
-  return {
-    key1: 'value1',
-    key2: 'value2',
-    key3: 'value3',
-  };
-};
+// let objectLit = function() {
+//   return {
+// key1: 'value1',
+//    key2: 'value2',
+//    key3: 'value3',
+//  };
+//};
+
+const objectLit = array => ({
+    key1: array[0],
+    key2: array[1],
+    key3: array[2],
+});
+
+// console.log(objectLit (['value1', 'value2', 'value3']));
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(objectLit());
 
 
-let sumAndProduct = function(a, b) {
-  let sum = a + b;
-  let product = a * b;
-  return [sum, product];
-};
+// let sumAndProduct = function(a, b) {
+//  let sum = a + b;
+//  let product = a * b;
+//  return [sum, product];
+//};
+
+const sumAndProduct = (num1, num2) => `${num1} + ${num2} = ${num1 + num2}
+${num1} * ${num2} = ${num1 * num2}`;
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sumAndProduct(3, 9));
+//console.log(sumAndProduct(3, 9));
 
 
-let message = function(name) {
+//let message = function(name) {
+//  return `Hello, ${name}!`;
+//};
+
+const message = (name) => {
   return `Hello, ${name}!`;
 };
 
@@ -154,6 +172,7 @@ let Student = function(name, age, hometown) {
 
 let joe = new Student('Joe', 'Schmoe', 100);
 
+
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
 // console.log(joe);
@@ -168,17 +187,21 @@ Student.prototype.greeting = function() {
 // console.log(joe.greeting());
 
 
-Student.courseName = function() {
-  return 'This student is enrolled in Code 301.';
-};
+//Student.courseName = function() {
+//  return 'This student is enrolled in Code 301.';
+//};
+
+const student = word => {
+  return word;
+}
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+// console.log((student)('is enrolled in Code 301.'));
 
 
 
 // STEP 11
-// How do arrow functions affect constructor functions?
+// How do arrow functions affect constructor functions? They change the scope of everything inside them, so this cannot be used. 
 Student.prototype.scope = function() {
   console.log(this);
 };
@@ -193,8 +216,8 @@ Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-// 
-// 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// The Student constructor function.
+// 2. What is "this" when joe.scopeArrow() is invoked? 
+// Every element in the browser at the time it was evoked.
 // 3. Explain why "this" is different when an arrow function is used.
-// 
+// An arrow function changes the scope of what follows and so does not have its own "this". Instead, "this" is now applied to the entire scope, not what is withing the arrow function.
