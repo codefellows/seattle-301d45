@@ -37,7 +37,7 @@ function displayPics(){
   }
   console.log(rando);
   // TODO: In a sentence or two, explain why the previous line of code threw an error when we changed the variable declaration from `var to `let`.
-  // PUT YOUR RESPONSE IN THIS COMMENT
+  // Console says that rando is not defined because it is scoped to the code block function makeRandom and the program doesn't know it exists outside of it.
   console.log(viewed);
 
   for (let i = 0; i < 3; i++){
