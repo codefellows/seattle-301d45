@@ -17,12 +17,11 @@ nav {
     margin-top: 25px;
 }
 
-nav ul {
+nav ul, aside button {
     float: right;
 }
 
 nav li {
-    float: left;
     padding-right: 2px;
 }
 
@@ -57,7 +56,7 @@ aside {
     padding-bottom: 60px;
 }
 
-aside img {
+aside img, nav li {
     float: left;
 }
 
@@ -76,7 +75,6 @@ aside p {
 }
 
 aside button {
-    float: right;
     font-family: 'Abel', sans-serif;
     text-transform: uppercase;
     padding: 15px 40px;
